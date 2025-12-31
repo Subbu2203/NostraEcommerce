@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nostra | Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:#f7f9fc;
+  color:#222;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#1D232C;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.navbar img{
+  height:40px;
+}
+.navbar a{
+  text-decoration:none;
+  color:hsl(0, 0%, 97%);
+  margin-left:20px;
+  font-weight:500;
+}
+
+/* HEADER */
+.contact-header{
+  text-align:center;
+  padding:70px 20px;
+  background:linear-gradient(135deg,#fdf1f5,#f7f9fc);
+}
+.contact-header h1{
+  font-size:36px;
+}
+.contact-header p{
+  margin-top:10px;
+  color:#555;
+}
+
+/* CONTACT SECTION */
+.contact-container{
+  max-width:1100px;
+  margin:50px auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:0 20px;
+}
+
+/* LEFT INFO */
+.contact-info{
+  background:#1D232C;
+  color:#fff;
+  padding:40px;
+  border-radius:20px;
+}
+.contact-info h2{
+  margin-bottom:20px;
+}
+.contact-info p{
+  color:#ddd;
+  margin-bottom:30px;
+}
+.info-box{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+.info-box i{
+  font-size:20px;
+}
+.social-icons{
+  margin-top:30px;
+}
+.social-icons i{
+  margin-right:15px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* FORM */
+.contact-form{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+.contact-form h2{
+  margin-bottom:20px;
+}
+.form-group{
+  margin-bottom:20px;
+}
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  outline:none;
+}
+.form-group textarea{
+  resize:none;
+  height:120px;
+}
+.contact-form button{
+  background:#1D232C;
+  color:#fff;
+  border:none;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+}
+.contact-form button:hover{
+  background:#000;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg{
+  display:none;
+  margin-top:15px;
+  color:green;
+  font-weight:500;
+}
+
+/* FOOTER */
+.footer{
+  background:#1D232C;
+  color:#fff;
+  text-align:center;
+  padding:30px 20px;
+  margin-top:60px;
+}
+
+@media(max-width:768px){
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <img src="./images/logo.png" alt="Nostra Logo">
+  <div>
+    <a href="index.html">Home</a>
+    <a href="Collections.html">Collections</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="contact-header">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you. Let’s talk 👋</p>
+</header>
+
+<!-- CONTACT -->
+<section class="contact-container">
+
+  <!-- INFO -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>Have any questions or feedback? Our team is always ready to help you.</p>
+
+    <div class="info-box">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>Chennai, Tamil Nadu, India</span>
+    </div>
+
+    <div class="info-box">
+      <i class="fa-solid fa-phone"></i>
+      <span>+91 98765 43210</span>
+    </div>
+
+    <div class="info-box">
+      <i class="fa-solid fa-envelope"></i>
+      <span>support@nostra.com</span>
+    </div>
+
+    <div class="social-icons">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <form class="contact-form" id="contactForm">
+    <h2>Send Message</h2>
+
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+      <textarea id="message" placeholder="Your Message" required></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+    <div class="success-msg" id="successMsg">
+      ✅ Message sent successfully!
+    </div>
+  </form>
+
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2025 Nostra. All Rights Reserved.</p>
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("successMsg").style.display="block";
+  this.reset();
+});
+</script>
+
+</body>
+</html>

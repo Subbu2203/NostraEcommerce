@@ -1,0 +1,595 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f7f9fc, #eef1f5);
+}
+
+
+/* NAVBAR */
+.navbar {
+  position: absolute; /* navbar on top of header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #f5efef;
+  
+  /*background: rgba(255,255,255,0.3); /* semi-transparent */
+  z-index: 3;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #d9d9d9;
+  font-weight: 500;
+}
+
+/* HEADER FULL SCREEN */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh; /* full viewport height */
+  background: url('./images/nosthead1.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #0b0b0b;
+}
+
+/* Overlay for readability */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Header text container */
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease forwards 0.5s;
+}
+
+/* Animate text */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .header {
+    height: 80vh;
+  }
+}
+
+
+
+/* Sparkle effect */
+@keyframes sparkle {
+  0%, 100% { text-shadow: 0 0 2px #333131, 0 0 10px #343333; }
+  50% { text-shadow: 0 0 5px rgba(77, 75, 75, 0.667), 0 0 5px #e8dada; }
+}
+
+.header-content h1 {
+  font-size: 4rem;
+  color: #fbfafa;
+  animation: slideUp 1s ease forwards 0.5s, sparkle 2s infinite alternate;
+  transition: transform 0.3s ease; /* for touch hover effect */
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  color: #ebe8e8;
+  transition: transform 0.3s ease;
+}
+
+
+/*hover*/
+
+.header-content:hover h1,
+.header-content:active h1 {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.header-content:hover p,
+.header-content:active p {
+  transform: scale(1.02);
+}
+
+
+/* ===================== */
+/* Your existing CSS for services, collection, new arrival, news, footer remains unchanged */
+
+
+
+/* SERVICES */
+.service-container-1{
+    display: flex; 
+    justify-content: center;
+    align-items: center; }  
+
+.service-container-2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.service-container-2 div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 500px;
+}
+
+.service-container-2 i {
+ font-size: 30px; 
+ margin-bottom: 10px; 
+ transition: transform 0.3s ease;
+ } 
+
+ .service-container-2 div:hover i { 
+  transform: scale(1.2) rotate(5deg); }
+
+  
+/* NEW ARRIVAL (FINAL FIX) */
+.new-arrival {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+
+}
+
+.arrival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.arrival-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.arrival-card:hover {
+  transform: translateY(-20px);
+}
+
+.arrival-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+
+.arrival-info {
+  padding: 16px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.add-btn {
+  background: #1D232C;
+  color: white;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*news 
+.news{ display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+.news input{ padding: 11px; width: 80vw; margin-bottom: 10px; border: solid black 3px; }
+.news button{ margin-top: 10px; color: #F2F4F7; background-color: #1D232C; border-radius: 10px; padding: 10px; } */
+
+
+/* news */
+.news{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #F7F9FC;
+  border-radius: 20px;
+
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+
+
+.news h2{
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.news p{
+  text-align: center;
+  color: #555;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.news input{
+  padding: 14px;
+  width: 80vw;
+  max-width: 450px;
+  margin-bottom: 10px;
+  border: 2px solid #1D232C;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* input focus effect */
+.news input:focus{
+  border-color: #4F46E5;
+}
+
+/* button */
+.news button{
+  margin-top: 10px;
+  color: #F2F4F7;
+  background-color: #1D232C;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* button hover */
+.news button:hover{
+  background-color: #3b3a3a;
+  transform: translateY(-2px);
+}
+
+
+
+/* FOOTER */
+.footer {
+  background: #1D232C;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+
+/*NEXT LEVEL COLLECTION*/
+
+/*LAYOUT */
+.nextlevel-collection {
+    padding: 40px 20px;
+}
+
+.main-heading h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collection-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* IMAGE */
+
+/* wrapper handles scroll animation */
+.img-wrapper {
+  opacity: 0;
+}
+
+.head-img {
+    width: 500px;
+    border-radius: 12px;
+    transition: transform 0.10s ease;
+    cursor:pointer;
+}
+
+/* desktop hover */
+.head-img:hover {
+    transform: scale(1.08);
+}
+
+/* mobile touch */
+
+.head-img.zoom {
+    transform: scale(1.1);
+}
+
+
+/* =====================
+   TEXT
+===================== */
+.collection-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.collection-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* =====================
+   SCROLL ANIMATION
+===================== */
+
+/* initial hidden state */
+.animate-left,
+.animate-right {
+    opacity: 0;
+}
+
+/* active state added by JS */
+.animate-left.active {
+    animation: slideFromLeft 0.6s ease forwards;
+}
+
+.animate-right.active {
+    animation: slideFromRight 0.6s ease forwards;
+}
+
+/* keyframes */
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =====================
+   TEXT HOVER (NO CONFLICT)
+===================== */
+.text-inner {
+    transition: transform 0.3s ease;
+}
+
+.collection-text:hover .text-inner {
+    transform: translateY(-6px);
+}
+
+
+/*logo*/
+
+.logo-img{
+  height: 75px;
+  width: auto;
+  cursor: pointer;
+  
+}
+
+
+/* COLLECTION HEADER FULL SCREEN */
+.collection-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+  background: url('./images/collections2.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: hsl(0, 10%, 96%);
+}
+
+/* Overlay */
+.collection-header::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%
+  
+}
+
+/* Content */
+.collection-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease forwards 0.4s;
+}
+
+/* Heading sparkle */
+.collection-header-content h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  animation: slideUp 1s ease forwards 0.4s, sparkle 2s infinite alternate;
+  transition: transform 0.3s ease;
+}
+
+/* Subtitle */
+.collection-header-content p {
+  font-size: 1.3rem;
+  color: #f1f1f1;
+  transition: transform 0.3s ease;
+}
+
+/* Hover / touch animation */
+.collection-header-content:hover h1,
+.collection-header-content:active h1 {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.collection-header-content:hover p,
+.collection-header-content:active p {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collection-header {
+    height: 50vh;
+  }
+
+  .collection-header-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .collection-header-content p {
+    font-size: 1rem;
+  }
+}
+
+/* COLLECTION CATEGORY SECTION */
+.category-section{
+  max-width:1100px;
+  margin:20px auto;
+  padding:20px 0;
+}
+
+.category-title{
+  font-size:28px;
+  margin-bottom:30px 0 15px;
+  text-align:center;
+ 
+}
+
+/* GRID – SAME AS NEW ARRIVAL */
+/* COLLECTION GRID */
+.collections-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  gap:20px;
+  justify-items:center; /* 🔥 important */
+  margin-bottom: 40px;
+}
+
+/* FORCE CARD SIZE */
+.arrival-card{
+  width:260px;            /* 🔥 FIXED WIDTH */
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+}
+
+.arrival-card:hover{
+  transform:translateY(-10px);
+}
+
+/* IMAGE */
+.arrival-card img{
+  width:100%;
+  height:250px;           /* home page size */
+  object-fit:cover;
+}
+
+/* INFO */
+.arrival-info{
+  padding:14px;
+}
+
+.arrival-info h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+/* PRICE ROW */
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.price{
+  font-size:16px;
+  font-weight:600;
+}
+
+.add-btn{
+  background:#1D232C;
+  color:#fff;
+  border:none;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+}
+.add-btn:hover{
+  background:#000;
+  transform:scale(1.1);
+}
