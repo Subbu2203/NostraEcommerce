@@ -22,3 +22,16 @@ document.querySelectorAll(".arrival-card").forEach(card => {
   btn.dataset.price = price;
   btn.dataset.image = image;
 });
+
+
+  document.querySelectorAll('.arrival-card').forEach(card => {
+    const rating = parseInt(card.getAttribute('data-rating'));
+    const ratingContainer = card.querySelector('.arrival-rating');
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star');
+      if (i > rating) star.classList.add('empty');
+      star.innerHTML = i <= rating ? '&#9733;' : '&#9734;';
+      ratingContainer.appendChild(star);
+    }
+  });
